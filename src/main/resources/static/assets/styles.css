@@ -1,0 +1,186 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b1020;
+  color: #e7e9ee;
+}
+.container { max-width: 980px; margin: 0 auto; padding: 16px; }
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+.title { font-weight: 700; letter-spacing: 0.2px; }
+.footer { margin-top: 18px; padding: 10px 0; }
+.muted { color: rgba(231,233,238,0.6); font-size: 13px; }
+
+.card {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.col { flex: 1 1 280px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+label { font-size: 13px; color: rgba(231,233,238,0.8); }
+input, textarea, select {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  color: #e7e9ee;
+  padding: 10px 12px;
+  outline: none;
+}
+textarea { 
+  min-height: 90px; 
+  resize: vertical; 
+  width: 100%;
+}
+.field textarea {
+  width: 100%;
+}
+select {
+  background: rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+select:hover {
+  background: rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.18);
+}
+select:focus {
+  background: rgba(0,0,0,0.5);
+  border-color: rgba(93,135,255,0.6);
+}
+select option {
+  background: #1a1f35;
+  color: #e7e9ee;
+  padding: 10px 12px;
+}
+select option:hover {
+  background: rgba(93,135,255,0.3);
+}
+select option:checked,
+select option:focus {
+  background: rgba(93,135,255,0.5);
+  color: #ffffff;
+}
+
+.btn {
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  color: #e7e9ee;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover { background: rgba(255,255,255,0.14); }
+.btn-primary { background: rgba(93,135,255,0.35); border-color: rgba(93,135,255,0.6); }
+.btn-small { padding: 6px 10px; font-size: 12px; }
+.btn-danger { background: rgba(255,87,87,0.25); border-color: rgba(255,87,87,0.5); }
+.btn-danger:hover { background: rgba(255,87,87,0.35); }
+
+.question-card { margin-top: 16px; }
+.option-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
+.option-row .option-input { flex: 1; }
+.options-list { margin-bottom: 8px; }
+.btn-primary:hover { background: rgba(93,135,255,0.45); }
+.btn-danger { background: rgba(255,93,93,0.22); border-color: rgba(255,93,93,0.5); }
+.btn-secondary { background: rgba(255,255,255,0.08); }
+.btn-small { padding: 7px 10px; font-size: 13px; }
+
+.hidden { display: none !important; }
+.error { color: #ff8b8b; font-size: 13px; }
+.ok { color: #9dffb3; font-size: 13px; }
+.divider { height: 1px; background: rgba(255,255,255,0.10); margin: 12px 0; }
+
+.table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.table th, .table td {
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  padding: 8px 6px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+}
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px;
+}
+
+/* Стили для карточек вопросов респондента */
+.question-card-public {
+  margin-top: 20px;
+}
+.question-card-public .question-header {
+  color: rgba(231,233,238,0.7);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.question-card-public .question-text {
+  font-size: 18px;
+  margin: 12px 0 16px 0;
+  line-height: 1.4;
+}
+
+/* Радиокнопки для одного варианта */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+.radio-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+  flex-shrink: 0;
+}
+.radio-label {
+  font-size: 16px;
+  color: #e7e9ee;
+  cursor: pointer;
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Чекбоксы для нескольких вариантов */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+.checkbox-option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+  flex-shrink: 0;
+}
+.checkbox-label {
+  font-size: 16px;
+  color: #e7e9ee;
+  cursor: pointer;
+  flex: 1;
+  line-height: 1.4;
+}
+
